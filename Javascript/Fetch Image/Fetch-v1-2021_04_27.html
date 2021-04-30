@@ -1,0 +1,37 @@
+<!-- Training: fetch() -->
+<!-- Youtube: 1.1: fetch() - Working With Data & APIs in JavaScript -->
+<!-- Source: https://www.youtube.com/watch?v=tc8DU14qX6I&t=281s -->
+<!-- Original Author: The Coding Train -->
+<!-- Training Completed: 4/30/2021 by Spencer Hurd -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data</title>
+</head>
+<body>
+    
+    <img src="" id="turtle" width="500" alt="">
+
+    <script>
+        console.log('about to fetch a turtle');
+
+        catchTurtle()
+            .then(response => {
+                console.log("fetch complete")
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        async function catchTurtle() {
+            const response = await fetch('turtle.jpg');
+            const blob = await response.blob();
+            document.getElementById('turtle').src = URL.createObjectURL(blob);
+        }
+    </script>
+
+</body>
+</html>
