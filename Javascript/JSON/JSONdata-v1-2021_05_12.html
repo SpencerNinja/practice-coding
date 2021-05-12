@@ -1,0 +1,54 @@
+<!-- Training: JSON and API Data -->
+<!-- Youtube Video Titles: 
+    1.4: JSON - Working with Data and APIs in JavaScript -->
+<!-- Source: 
+    https://www.youtube.com/watch?v=uxf0--uiX0I&list=WL&index=1 -->
+<!-- API:
+    https://wheretheiss.at/ -->
+<!-- Original Author: The Coding Train -->
+<!-- Training Completed: 05/12/2021 by Spencer Hurd -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch JSON from API and map latitude and longitude</title>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h1>Where is the ISS?</h1>
+
+        <p>
+            Latitude: <span id="lat"></span><br />
+            Longiitude: <span id="lon"></span>
+        </p>
+    </div>
+
+    <script>
+        // let pos = {
+        //     lat: -45,
+        //     lon: 112
+        // };
+        // console.log(pos);
+
+        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+        async function getISS() {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            const { latitude, longitude } = data;
+
+            document.getElementById('lat').textContent = latitude;
+            document.getElementById('lon').textContent = longitude;
+            console.log(data);
+
+            console.log("Latitude: ", data.latitude);
+            console.log("Longitude: ", data.longitude);
+        };
+
+        getISS();
+        
+    </script>
+</body>
+</html>
