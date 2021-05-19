@@ -1,0 +1,71 @@
+Where to find assignments:
+    cit.cs.dixie.edu/cs/2420/ssn/
+    - InsertNames.txt
+    - DeleteNames.txt
+    - RetrieveNames.txt
+    - InsertNamesMedium.txt
+    - DeleteNamesMedium.txt
+    - RetrieveNamesMedium.txt
+    - InsertNamesBig.txt
+    - DeleteNamesBig.txt
+    - RetrieveNamesBig.txt
+
+
+September 28, 2020
+Abstract Data Types
+
+- Stack 
+    Example: plate dispenser at buffet
+    LIFO = last in first out
+    FILO = first in last out
+
+    ADT
+    - push         (Big-O order 1) 
+    - pop          (Big-O order 1) 
+    - top          (Big-O order 1) 
+    - IsEmpty      (Big-O order 1) 
+
+    Details
+    - class Stack
+    def __init__(self):
+        self.A = []
+    def push(self, item):
+        self.A.append(item)
+
+- Queue 
+    Example: checkout line in store
+    FIFO = first in first out
+
+    ADT
+    - enqueue       (Big-O order 1) 
+    - dequeue       (Big-O order N) 
+    - front         (Big-O order 1) 
+    - IsEmpty       (Big-O order 1) 
+
+    Details
+    - self.A[]
+
+September 30, 2020
+    Midterm
+        Review on Wednesday October 7
+        Test on Friday October 9 (for odd numbered students)
+        Practice test on cit.dixie.edu website, located at: Notes > Semester Notes
+    
+
+October 23, 2020
+    Unordered Unique Container
+    Linked Lists
+    - Why linked lists instead of Python lists?
+        1. Linked lists work with fragmented memory
+            - simply changes the reference at the end of one part to skip over the deleted part of memory.
+        2. Easier to insert and delete 
+
+
+    self.mFirst (node)
+        - mItem|mNext
+        - Bob|->Jane  Jane|none     
+        # check for posted code example (lls2.pyw) 11:30
+        n = node = mItem|mNext
+        n.mItem
+        n.mNext
+
